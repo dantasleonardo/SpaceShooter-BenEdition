@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
                 LookDirection.normalized, Vector3.up);
         }
 
-        if(Input.GetButtonDown(FireAxis) && CanFire)
+        if (Input.GetButtonDown(FireAxis) && CanFire)
         {
             foreach (Transform T in TurretTransform)
             {
@@ -54,18 +54,21 @@ public class PlayerController : MonoBehaviour
                 {
                     AmmoManager.SpawnAmmo(T.position, T.rotation);
                 }
-                else if (GameController.Score >= 200 && GameController.Score <= 1500) {
+                else if (GameController.Score >= 100 && GameController.Score <= 500)
+                {
                     Debug.Log("Saiu 1");
                     var pos = T.position;
                     x += Time.deltaTime * 10;
-                    AmmoManager.SpawnAmmo(new Vector3(pos.x - 0.5f, pos.y, pos.z -= 0.5f), T.rotation);
-                    AmmoManager.SpawnAmmo(new Vector3(pos.x + 0.5f, pos.y, pos.z += 0.5f), T.rotation);
-                }else if (GameController.Score > 1500) {
+                    AmmoManager.SpawnAmmo(new Vector3(pos.x - 0.5f, pos.y, pos.z - 0.5f), Quaternion.AngleAxis(10.0f, transform.up) * T.rotation);
+                    AmmoManager.SpawnAmmo(new Vector3(pos.x + 0.5f, pos.y, pos.z + 0.5f), Quaternion.AngleAxis(-10.0f, transform.up) * T.rotation);
+                }
+                else if (GameController.Score > 500)
+                {
                     Debug.Log("Saiu 2");
-                    AmmoManager.SpawnAmmo(new Vector3(T.position.x - 0.5f, T.position.y, T.position.z - 0.5f), T.rotation);
-                    AmmoManager.SpawnAmmo(new Vector3(T.position.x, T.position.y, T.position.z),               T.rotation);
-                    AmmoManager.SpawnAmmo(new Vector3(T.position.x + 0.5f, T.position.y, T.position.z + 0.5f), T.rotation);
-                }                    
+                    AmmoManager.SpawnAmmo(new Vector3(T.position.x - 0.5f, T.position.y, T.position.z - 0.5f), Quaternion.AngleAxis(10.0f, transform.up) * T.rotation);//T.rotation);
+                    AmmoManager.SpawnAmmo(new Vector3(T.position.x, T.position.y, T.position.z), T.rotation);
+                    AmmoManager.SpawnAmmo(new Vector3(T.position.x + 0.5f, T.position.y, T.position.z + 0.5f), Quaternion.AngleAxis(-10.0f, transform.up) * T.rotation);
+                }
                 //Debug.Log("Atirou");
             }
 
