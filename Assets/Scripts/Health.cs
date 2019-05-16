@@ -43,7 +43,7 @@ public class Health : MonoBehaviour
     }
 
     [SerializeField]
-    private float _HealthPoints = 100f;
+    public static float _HealthPoints = 100f;
 
 
    

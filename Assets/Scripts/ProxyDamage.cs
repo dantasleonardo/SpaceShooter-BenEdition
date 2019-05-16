@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProxyDamage : MonoBehaviour
 {
-    public float DamageRate = 10f;
+    public float DamageRate = 1f;
     // Start is called before the first frame update
     void OnTriggerStay(Collider Col)
     {

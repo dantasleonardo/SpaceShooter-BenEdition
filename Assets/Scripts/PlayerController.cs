@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Debug.Log(Health._HealthPoints);
         float Horz = Input.GetAxis(HorzAxis);
         float Vert = Input.GetAxis(VertAxis);
         Vector3 MoveDirection = new Vector3(Horz, 0.0f, Vert);
@@ -57,7 +58,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else if (GameController.Score >= 100 && GameController.Score <= 500)
                 {
-                    Debug.Log("Saiu 1");
+                    //Debug.Log("Saiu 1");
                     var pos = T.position;
                     x += Time.deltaTime * 10;
                     AmmoManager.SpawnAmmo(new Vector3(pos.x - 0.5f, pos.y, pos.z - 0.5f), Quaternion.AngleAxis(10.0f, transform.up) * T.rotation);
@@ -65,7 +66,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else if (GameController.Score > 500)
                 {
-                    Debug.Log("Saiu 2");
+                    //Debug.Log("Saiu 2");
                     AmmoManager.SpawnAmmo(new Vector3(T.position.x - 0.5f, T.position.y, T.position.z - 0.5f), Quaternion.AngleAxis(10.0f, transform.up) * T.rotation);//T.rotation);
                     AmmoManager.SpawnAmmo(new Vector3(T.position.x, T.position.y, T.position.z), T.rotation);
                     AmmoManager.SpawnAmmo(new Vector3(T.position.x + 0.5f, T.position.y, T.position.z + 0.5f), Quaternion.AngleAxis(-10.0f, transform.up) * T.rotation);

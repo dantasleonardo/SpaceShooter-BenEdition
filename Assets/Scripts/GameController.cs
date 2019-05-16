@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour
 
     public Text GameOverText = null;
 
+    public GameObject powerUp;
+
     public static GameController ThisInstance = null;
     // Start is called before the first frame update
     void Awake()
@@ -27,9 +29,15 @@ public class GameController : MonoBehaviour
         {
             ScoreText.text = ScorePrefix + Score.ToString();
         }
-            
-       
+
+        //Invoke("AparecePowerUp", 5);
+
     }
+
+    /*public void AparecePowerUp()
+    {
+        powerUp.SetActive(true);
+    }*/
 
     public static void GameOver()
     {
