@@ -145,6 +145,7 @@ MonoBehaviour:
   DeathParticlesPrefab: {fileID: 8704255631944947348, guid: 41ac297aa4feeb34a879827ca15a79f9,
     type: 3}
   ShouldDestroyOnDeath: 1
+  _HealthPoints: 100
 --- !u!114 &3266451043798863529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b3d83024309244ba02c5a1e018fed1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageRate: 100
+  DamageRate: 50
 --- !u!114 &-7151821418232148389
 MonoBehaviour:
   m_ObjectHideFlags: 0

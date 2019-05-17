@@ -7,6 +7,7 @@ public class GameOver : MonoBehaviour
 {
     public void PlayAgain()
     {
+        GameController.Score = 0;
         SceneManager.LoadScene("Menu");
     }
 

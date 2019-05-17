@@ -589,6 +589,7 @@ MonoBehaviour:
   DeathParticlesPrefab: {fileID: 8704255631944947348, guid: 41ac297aa4feeb34a879827ca15a79f9,
     type: 3}
   ShouldDestroyOnDeath: 1
+  _HealthPoints: 100
 --- !u!1 &552372357
 GameObject:
   m_ObjectHideFlags: 0

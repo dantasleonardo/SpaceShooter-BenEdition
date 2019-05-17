@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log(Health._HealthPoints);
+        //Debug.Log(Health._HealthPoints);
         float Horz = Input.GetAxis(HorzAxis);
         float Vert = Input.GetAxis(VertAxis);
         Vector3 MoveDirection = new Vector3(Horz, 0.0f, Vert);

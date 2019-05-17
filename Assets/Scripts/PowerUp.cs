@@ -16,7 +16,7 @@ public class PowerUp : MonoBehaviour
 
         //anim = gameObject.GetComponent<Animator>();
         col = gameObject.GetComponent<BoxCollider>();
-        Debug.Log(Health._HealthPoints);
+        //Debug.Log(Health._HealthPoints);
         //audioS = gameObject.GetComponent<AudioSource>();
         
 
@@ -36,12 +36,12 @@ public class PowerUp : MonoBehaviour
         {
 
             //audioS.Play();
-            Health._HealthPoints += 200f;
+            other.GetComponent<Health>()._HealthPoints += 200f;
             //Ammo.Damage += 200f;
             col.enabled = false;
-            Debug.Log(Health._HealthPoints);
+            //Debug.Log(Health._HealthPoints);
             //anim.SetTrigger("Coletando");
-            Destroy(gameObject, 0.667f);
+            Destroy(gameObject);
         }
     }
 }
